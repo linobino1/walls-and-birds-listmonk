@@ -18,3 +18,7 @@ This example deploys self-hosted version of [Listmonk](https://listmonk.app/).
 ## 📝 Notes
 - Source repo: https://github.com/knadh/listmonk
 - Docs: https://listmonk.app/docs/
+
+## Development Setup
+
+run `docker compose up -d` and visit `http://localhost:9000`
