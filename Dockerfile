@@ -1,4 +1,4 @@
-FROM listmonk/listmonk:latest
+FROM listmonk/listmonk:v2.4.0
 ARG PORT ADMIN_PASSWORD ADMIN_USERNAME PGDATABASE PGHOST PGPASSWORD PGPORT PGUSER
 COPY static /listmonk/static
 COPY config.sh ./config.sh
