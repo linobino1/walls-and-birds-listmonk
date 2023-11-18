@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   listmonk:
-    image: listmonk/listmonk:v2.5.1
+    image: listmonk/listmonk:v2.4.0
     ports:
       - 9000:9000
     command: "./listmonk --static-dir=/listmonk/static"
