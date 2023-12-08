@@ -25,6 +25,13 @@
       {{ end }}
     </ul>
 
+    {{ if .Data.CaptchaKey }}
+      <div class="captcha">
+          <div class="h-captcha" data-sitekey="{{ .Data.CaptchaKey }}"></div>
+          <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+      </div>
+    {{ end }}
+
     <button type="submit" class="button">{{ L.T "public.sub" }} &#10003;</button>
     
     <div class="spacer"></div>
