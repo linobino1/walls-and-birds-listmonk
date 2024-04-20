@@ -1,30 +1,16 @@
 # Listmonk example
 
-This example deploys self-hosted version of [Listmonk](https://listmonk.app/).
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/listmonk)
-
-## ✨ Features
-
-- Listmonk
-- Postgres
-
-## 💁‍♀️ How to use
-
-- Click the Railway button 👆
-- Fill in the variables
-- Deploy! 🚄
-
-## 📝 Notes
-
-- Source repo: https://github.com/knadh/listmonk
-- Docs: https://listmonk.app/docs/
-
 ## Development Setup
 
 Initially, listmonk needs to set up the database schema. To do this, uncomment the `install command` in `docker-compose.yaml` and run `docker compose up -d`. Then, comment out the `install command` again and run `docker compose up -d` again.
 
 Subsequently you can just run `docker compose up -d` and visit `http://localhost:9000`
+
+## Production Deployment on Fly.io
+
+1. Create a `.env` file like .env.example with the necessary environment variables.
+1. Run `flyctl launch` to create a new app.
+1. Run `source fly_deploy.sh` to deploy the app.
 
 ## Database Migration
 
