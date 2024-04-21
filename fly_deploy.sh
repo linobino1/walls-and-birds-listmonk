@@ -10,4 +10,4 @@ flyctl deploy \
   --build-arg PGUSER=$PGUSER \
   --build-arg PGPASSWORD=$PGPASSWORD \
   --build-arg PGDATABASE=$PGDATABASE \
-  --build-arg PGSSL_MODE=$PGSSLMODE
+  --build-arg PGSSLMODE=$PGSSLMODE
