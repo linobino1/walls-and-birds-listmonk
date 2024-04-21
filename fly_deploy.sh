@@ -1,8 +1,5 @@
 # load .env
-if [ ! -f .env ]
-then
-  export $(cat .env | xargs)
-fi
+source .env
 
 # run flyctl deploy with build args
 flyctl deploy \
