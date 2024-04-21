@@ -16,4 +16,4 @@ Subsequently you can just run `docker compose up -d` and visit `http://localhost
 
 1. Make sure the source and target listmonk installs are on the same version.
 1. on the source run `pg_dump -v -Ft <db_name/uri> > export.sql`
-1. on the target run `pg_restore -v -e --no-owner -d <db_name/uri> temp/export.sql`
+1. on the target run `pg_restore -v -e --no-owner -d <db_name/uri> export.sql`
