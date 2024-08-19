@@ -16,9 +16,9 @@ primary_region = 'ams'
   protocol = 'tcp'
   internal_port = 9000
   processes = ['app']
-  auto_start_machines = false
-  auto_stop_machines = true
-  min_machines_running = 1
+  auto_start_machines = true
+  auto_stop_machines = "suspend"
+  min_machines_running = 0
 
 [[services.ports]]
     port = 80
@@ -38,4 +38,3 @@ primary_region = 'ams'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 256
-
