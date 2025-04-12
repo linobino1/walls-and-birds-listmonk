@@ -4,7 +4,7 @@
 #
 
 app = 'walls-and-birds-listmonk'
-primary_region = 'ams'
+primary_region = 'fra'
 
 [build]
   dockerfile = 'Dockerfile'
