@@ -1,40 +1,35 @@
-# fly.toml app configuration file generated for walls-and-birds-listmonk on 2024-04-19T21:16:31+02:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
+#: schema https://json.schemastore.org/fly.json
 app = 'walls-and-birds-listmonk'
 primary_region = 'fra'
 
-[build]
-  dockerfile = 'Dockerfile'
+[deploy]
+strategy = "bluegreen"
 
 [build.args]
-  PORT = '9000'
-  
-[[services]]
-  protocol = 'tcp'
-  internal_port = 9000
-  processes = ['app']
-  auto_start_machines = true
-  auto_stop_machines = "suspend"
-  min_machines_running = 1
+PORT = '9000'
 
-[[services.ports]]
-    port = 80
-    handlers = ['http']
-    force_https = true
+[http_service]
+internal_port = 9000
+force_https = true
+auto_stop_machines = 'off'
+auto_start_machines = true
+min_machines_running = 1
+processes = ['app']
 
-[[services.ports]]
-    port = 443
-    handlers = ['tls', 'http']
+[http_service.concurrency]
+type = 'requests'
+hard_limit = 250
+soft_limit = 200
 
-  [services.concurrency]
-    type = 'requests'
-    hard_limit = 250
-    soft_limit = 200
+[[http_service.checks]]
+interval = '10s'
+timeout = '5s'
+grace_period = '5s'
+method = 'GET'
+path = '/health'
+tls_skip_verify = true
 
 [[vm]]
-  cpu_kind = 'shared'
-  cpus = 1
-  memory_mb = 256
+cpu_kind = 'shared'
+cpus = 1
+memory_mb = 256
